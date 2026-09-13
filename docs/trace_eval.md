@@ -10,11 +10,11 @@
 
 | Tiêu chí Đánh giá | Mức độ (1 - 5) | Giải trình chi tiết lý do chọn điểm |
 | :--- | :---: | :--- |
-| **1. Multi-step Reasoning** | 2 / 5 | Có câu hỏi suy luận nhiều bước (kiểm tra lịch -> đặt lịch mới nếu trống) nhưng thường chỉ là từng câu hỏi đơn lẻ |
-| **2. Tool Interaction** | 3 / 5 | Hệ thống cần kết nối đến Google Calendar của người dùng để có thể truy xuất, thao tác theo yêu cầu của người dùng |
+| **1. Multi-step Reasoning** | 3 / 5 | Có câu hỏi suy luận nhiều bước (kiểm tra lịch -> đặt lịch mới nếu trống) nhưng thường chỉ là từng câu hỏi đơn lẻ |
+| **2. Tool Interaction** | 4 / 5 | Hệ thống cần kết nối đến Google Calendar của người dùng để có thể truy xuất, thao tác theo yêu cầu của người dùng |
 | **3. Dynamic Decision** | 3 / 5 | Sẽ cần Agent kiểm tra lịch của người dùng trước khi có thể trả lời câu hỏi hoặc thực hiện các thao tác tiếp theo của người dùng |
-| **4. Long Horizon Goal** | 2 / 5 | Chủ yếu là để hỗ trợ người dùng kiểm tra lịch, sau đó thao tác, thường là những câu hỏi đơn lẻ chứ không phải cuộc hội thoại dài nhiều lượt |
-| **TỔNG ĐIỂM AGENTIC FIT** | **10 / 20** | Augmented Chatbot
+| **4. Long Horizon Goal** | 3 / 5 | Chủ yếu là để hỗ trợ người dùng kiểm tra lịch, sau đó thao tác, thường là những câu hỏi đơn lẻ chứ không phải cuộc hội thoại dài nhiều lượt |
+| **TỔNG ĐIỂM AGENTIC FIT** | **13 / 20** | Agent đáng thử
 
 ---
 
