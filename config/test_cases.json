@@ -1,0 +1,37 @@
+[
+  {
+    "id": "TC01",
+    "type": "direct_query",
+    "question": "Chào bạn, bạn có thể giới thiệu quy chế học vụ cơ bản của Đại học VinUni không?",
+    "expected_behavior": "Chatbot trả lời trực tiếp từ System Prompt, không cần gọi bất kỳ Tool nào.",
+    "complexity": "Low"
+  },
+  {
+    "id": "TC02",
+    "type": "single_tool_query",
+    "question": "Hãy tra cứu thông tin học vụ của sinh viên SV2026001.",
+    "expected_behavior": "Agent nhận diện nhu cầu tra cứu, tự động phát sinh Tool Call 'academic_query' với mã SV2026001.",
+    "complexity": "Medium"
+  },
+  {
+    "id": "TC03",
+    "type": "single_tool_query",
+    "question": "Hãy kiểm tra xem tối thứ 7 tuần này tôi có lịch gì không ?",
+    "expected_behavior": "Agent nhận diện nhu cầu tra cứu, tự động phát sinh tool call 'schedule_fetch' với thời gian là từ 18h đến 22h thứ 7 tuần này.",
+    "complexity": "Medium"
+  },
+  {
+    "id": "TC04",
+    "type": "multi_step_reasoning",
+    "question": "Kiểm tra xem tối thứ 7 tuần này tôi có lịch gì không, nếu không thì đặt cho tôi lịch đi chơi với người yêu vào lúc 19h, còn nếu không thì hãy đặt lịch đó vào cùng giờ của Chủ Nhật tuần này",
+    "expected_behavior": "Agent thực hiện chuỗi suy luận ReAct: kiểm tra lịch của người dùng đúng ngày trước, sau đó tiến hành đặt lịch hẹn dựa trên kết quả tra cứu.",
+    "complexity": "High"
+  },
+  {
+    "id": "TC05",
+    "type": "edge_case_handling",
+    "question": "Xóa lịch hẹn đi chơi vào tối Chủ Nhật của tôi",
+    "expected_behavior": "Agent kiểm tra lịch và không thấy có event nào tôi Chủ Nhật, đưa ra phản hồi chính xác, không bịa đặt rằng đã xóa lịch hẹn theo yêu cầu",
+    "complexity": "Medium"
+  }
+]

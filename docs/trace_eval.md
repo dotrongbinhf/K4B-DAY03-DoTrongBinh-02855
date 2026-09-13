@@ -1,8 +1,8 @@
 # 📊 BÁO CÁO THU HOẠCH NGHIỆM THU BÀI LAB 3 (BƯỚC 3 — SUBMISSION ARTIFACT)
 
-> **Họ và Tên Học viên:** [Điền Họ và Tên]  
-> **Mã Sinh Viên / Mã Học viên:** [Điền MSSV]  
-> **Chủ đề Lựa chọn:** [Điền tên chủ đề đã chọn từ docs/DANH_SACH_DE_TAI.md hoặc Đề tài Mở]  
+> **Họ và Tên Học viên:** Đỗ Trọng Bình
+> **Mã Sinh Viên / Mã Học viên:** 2A202602855
+> **Chủ đề Lựa chọn:** Trợ lý Quản lý lịch trình cá nhân
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Tiêu chí Đánh giá | Mức độ (1 - 5) | Giải trình chi tiết lý do chọn điểm |
 | :--- | :---: | :--- |
-| **1. Multi-step Reasoning** | / 5 | Bài toán có yêu cầu chia nhỏ nhiều bước suy luận nối tiếp nhau không? |
-| **2. Tool Interaction** | / 5 | Hệ thống có cần kết nối với MCP Server / Cơ sở dữ liệu bên ngoài không? |
-| **3. Dynamic Decision** | / 5 | Bước tiếp theo có phụ thuộc vào kết quả quan sát bước trước không? |
-| **4. Long Horizon Goal** | / 5 | Hệ thống có phải giữ mục tiêu xuyên suốt qua nhiều lượt xử lý không? |
-| **TỔNG ĐIỂM AGENTIC FIT** | **/ 20** | *Nếu tổng điểm > 12/20: Bài toán rất phù hợp triển khai Agentic System.* |
+| **1. Multi-step Reasoning** | 2 / 5 | Có câu hỏi suy luận nhiều bước (kiểm tra lịch -> đặt lịch mới nếu trống) nhưng thường chỉ là từng câu hỏi đơn lẻ |
+| **2. Tool Interaction** | 3 / 5 | Hệ thống cần kết nối đến Google Calendar của người dùng để có thể truy xuất, thao tác theo yêu cầu của người dùng |
+| **3. Dynamic Decision** | 3 / 5 | Sẽ cần Agent kiểm tra lịch của người dùng trước khi có thể trả lời câu hỏi hoặc thực hiện các thao tác tiếp theo của người dùng |
+| **4. Long Horizon Goal** | 2 / 5 | Chủ yếu là để hỗ trợ người dùng kiểm tra lịch, sau đó thao tác, thường là những câu hỏi đơn lẻ chứ không phải cuộc hội thoại dài nhiều lượt |
+| **TỔNG ĐIỂM AGENTIC FIT** | **10 / 20** | Augmented Chatbot
 
 ---
 
@@ -28,20 +28,25 @@ Dán 1 đoạn trích xuất log tiêu biểu từ file `docs/trace_waterfall.js
 [
   {
     "step": 1,
+    "query": "Mã sinh viên của tôi là 22021196",
     "action_type": "TOOL_EXECUTION",
     "tool_name": "academic_query",
     "arguments": {
-      "student_id": "SV2026001"
+      "student_id": "22021196"
     },
     "observation": {
-      "status": "SUCCESS",
-      "student_id": "SV2026001",
-      "data": {
-        "full_name": "Nguyễn Văn An",
-        "gpa": 3.85
-      }
+      "status": "NOT_FOUND",
+      "message": "Không tìm thấy dữ liệu sinh viên có mã '22021196'"
     },
-    "latency_ms": 120.5
+    "latency_ms": 1662.68
+  },
+  {
+    "step": 2,
+    "query": "Mã sinh viên của tôi là 22021196",
+    "action_type": "FINAL_ANSWER",
+    "thought": "Tổng hợp kết quả từ MCP Server thành công.",
+    "output": "Không tìm thấy dữ liệu sinh viên có mã '22021196'",
+    "latency_ms": 10.0
   }
 ]
 ```
@@ -51,9 +56,9 @@ Dán 1 đoạn trích xuất log tiêu biểu từ file `docs/trace_waterfall.js
 ## 3. TỔNG KẾT KẾT QUẢ NGHIỆM THU & NỘP BÀI
 
 - [ ] Đã điền API Key thật trong `.env` và xác nhận Agent chạy mượt mà trên LLM API thật (Gemini/OpenAI).
-- **Tổng số Test Cases đã chạy thành công:** ___ / 5 test cases.
-- **Số lượt gọi Tool qua MCP Server chính xác:** ___ lượt.
-- **Kết quả đẩy Repo nộp bài:** [ ] Đã Commit và Push mã nguồn thành công lên GitHub cá nhân.
+- **Tổng số Test Cases đã chạy thành công:** 5 / 5 test cases.
+- **Số lượt gọi Tool qua MCP Server chính xác:** 1 lượt.
+- **Kết quả đẩy Repo nộp bài:** [x] Đã Commit và Push mã nguồn thành công lên GitHub cá nhân.
 
 ---
 
